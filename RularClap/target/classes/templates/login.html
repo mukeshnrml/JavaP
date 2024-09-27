@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RulatrClap</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+   
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+    .login-container {
+        max-width: 400px; /* Reduced container width */
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+        backdrop-filter: blur(10px); /* Subtle blur effect */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    }
+
+    .input-container {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 0;
+        padding-left: 2.5rem; /* Space for the icon */
+        box-shadow: none;
+        background: transparent; /* Transparent input background */
+        color: white; /* White text */
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-bottom: 2px solid #007bff;
+        box-shadow: none;
+    }
+
+    .input-container label {
+        position: absolute;
+        top: 50%;
+        left: 2.5rem; /* Adjust label to account for the icon */
+        transform: translateY(-50%);
+        color: #999;
+        transition: 0.3s ease;
+    }
+
+    .form-control:focus + label,
+    .form-control:not(:placeholder-shown) + label {
+        top: -10px;
+        font-size: 12px;
+        color: #007bff;
+    }
+
+    .form-check-label {
+        color: rgb(17, 16, 16); /* White checkbox label */
+    }
+
+    h3, p {
+        color: rgb(8, 8, 8); /* White text */
+    }
+
+    /* Blue hyperlinks by default */
+    a {
+        color: blue;
+    }
+
+    /* Green hover effect for hyperlinks */
+    a:hover {
+        color: green;
+    }
+    
+
+    /* Center the checkbox and label */
+    .center-checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 a">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><i class="fa fa-briefcase text-primary ms-2"></i> &nbsp;Rular<span
+                    style="color: #fb873f;">Clap</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0" >
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Labour Login 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/signin}" href="#">Login</a>
+                        <a class="dropdown-item" th:href="@{/signup}" href="#">Signup</a>
+                    </div>
+                </li>
+
+    <a href="#" class="nav-item nav-link">
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-2 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Login</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">login</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    
+    <!-- Login Form  -->
+<div class="container d-flex justify-content-center align-items-center vh-100 mt-5">
+    <div class="col-md-6 login-container">
+    <div th:if="${param.error}" class="alert alert-danger">
+                            	Invalid username and password
+                            </div>
+                            
+                             <div th:if="${param.logout}" class="alert alert-success">
+                            	You have been logged out
+                            </div>
+                            
+                             <div th:if="${param.change}" class="alert alert-success">
+                            	<p th:text="${param.change}"></p>
+                            </div>
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="card-body text-center">
+                <!-- Centered Login Logo -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWNeZFGuF8U1J_sztO1mq9Pw9HDV-uD2KZQKCCkKRYe2xwe54L10AYGrTaMkIfQPQJtR0&usqp=CAU" alt="Login Logo" class="logo img-fluid rounded">
+
+                <h3 class="text-center mb-4">Login</h3>
+                <form id="login-form" th:action="@{/dologin}" method="post">
+                   
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input name="username" type="text" class="form-control" id="username" placeholder="Your Email" required>
+                                <label for="username">Email Address</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="form-group">
+                        <!-- Checkbox first -->
+                        <input id="remember-me" name="remember-me" type="checkbox">
+                        <label for="remember-me" class="text-black mb-3"> Remember me</label><br>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary w-100 mb-3 rounded-pill" value="submit" name="submit">Login</button>
+                    </div>
+                    
+                     
+                            
+
+                    <div class="col-12 text-center">
+                         <p>Don't have an account? <a href="/signup">Sign up</a></p>
+                    </div>
+
+                    <div class="container text-center">
+                        <a th:href="@{/forgot}">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+   
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 ">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3 "></i>Green Park Niranjanpur, Dehradun, Uttrakhand</p>
+                    <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+91 7488921583</p>
+                    <p class="mb-2 text-white"><i class="fa fa-envelope me-3"></i>rularclap@gmail.com</p>
+                    
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                    <p class="text-white">Join our newsletter to receive the latest updates, job opportunities, and success stories from rural areas. Empower your future with us! </p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form action="#">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5 white-input" type="email"
+    placeholder="Your email" required>
+
+                            <button type="submit"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 "><a href="mailto:raygulshan960@gmail.com">Subscribe</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                        <a href="#" class="text-primary mb-0 display-6">Rular<span class="text-white">Clap</span><i class="fa fa-briefcase text-primary ms-2"></i></a>
+                    </div>
+                    <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>   
+    
+    
+
+
+</body>
+</html>
